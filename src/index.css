@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.select-1 {
+  border: none;
+  outline: none;
+}
