@@ -40,9 +40,9 @@ function ReactTabs() {
             <div>
               <div className='flex items-center justify-between'>
                 <HomeCards src={"/aksiya.png"} />
-                <HomeCards src={"/aksiya.png"} />
-                <HomeCards src={"/aksiya.png"} />
-                <HomeCards src={"/aksiya.png"} />
+                <HomeCards src={"/aksiya3.png"} />
+                <HomeCards src={"/aksiya2.png"} />
+                <HomeCards src={"/aksiya1.png"} />
               </div>
             </div>
             
@@ -52,19 +52,12 @@ function ReactTabs() {
       <TabPanel>
         <Tab>
           <div className='container mx-auto'>
-            {/* <div className='flex  items-center justify-between'>
-              <h1 className='text-[40px] text-[#191919] font-semibold'>Пицца</h1>
-              <div className='flex items-center gap-1 border-[1px] border-[#F0F0F0] w-[115px] h-[35px] justify-center rounded-[6px] hover:bg-[#F9F9F9] duration-300'>
-                <img src="/Filter.png" alt="" />
-                <p className='text-[16px] text-[#000000]'>Фильтры</p>
-              </div>
-            </div> */}
             <div>
               <div className='flex items-center justify-between'>
                 <HomeCards src={"/pitsa1.png"}/>
-                <HomeCards src={"/pitsa1.png"}/>
-                <HomeCards src={"/pitsa1.png"}/>
-                <HomeCards src={"/pitsa1.png"}/>
+                <HomeCards src={"/bodring.png"}/>
+                <HomeCards src={"/sosilkali.png"}/>
+                <HomeCards src={"/torttali.png"}/>
               </div>
             </div>
           </div>
@@ -74,19 +67,12 @@ function ReactTabs() {
         <Tab>
           <Tab>
             <div className='container mx-auto'>
-              {/* <div className='flex  items-center justify-between'>
-                <h1 className='text-[40px] text-[#191919] font-semibold'>Суши</h1>
-                <div className='flex items-center gap-1 border-[1px] border-[#F0F0F0] w-[115px] h-[35px] justify-center rounded-[6px] hover:bg-[#F9F9F9] duration-300'>
-                  <img src="/Filter.png" alt="" />
-                  <p className='text-[16px] text-[#000000]'>Фильтры</p>
-                </div>
-              </div> */}
               <div>
                 <div className='flex items-center justify-between'>
                   <HomeCards src={"/sushi-bg.png"} />
-                  <HomeCards src={"/sushi-bg.png"} />
-                  <HomeCards src={"/sushi-bg.png"} />
-                  <HomeCards src={"/sushi-bg.png"} />
+                  <HomeCards src={"/sushi2.png"} />
+                  <HomeCards src={"/sushi3.png"} />
+                  <HomeCards src={"/sushi4.png"} />
                 </div>
               </div>
             </div>
@@ -98,10 +84,10 @@ function ReactTabs() {
           <div className='container mx-auto'>
             <div>
               <div className='flex items-center justify-between'>
+                <HomeCards src={"/qora.png"} />
                 <HomeCards src={"/pepsi.png"} />
-                <HomeCards src={"/pepsi.png"} />
-                <HomeCards src={"/pepsi.png"} />
-                <HomeCards src={"/pepsi.png"} />
+                <HomeCards src={"/oq-pepsi.png"} />
+                <HomeCards src={"/qizil.png"} />
               </div>
             </div>
           </div>
@@ -110,19 +96,12 @@ function ReactTabs() {
       <TabPanel>
         <Tab>
           <div className='container mx-auto'>
-            {/* <div className='flex  items-center justify-between'>
-              <h1 className='text-[40px] text-[#191919] font-semibold'>Закуски</h1>
-              <div className='flex items-center gap-1 border-[1px] border-[#F0F0F0] w-[115px] h-[35px] justify-center rounded-[6px] hover:bg-[#F9F9F9] duration-300'>
-                <img src="/Filter.png" alt="" />
-                <p className='text-[16px] text-[#000000]'>Фильтры</p>
-              </div>
-            </div> */}
             <div>
               <div className='flex items-center justify-between'>
+                <HomeCards src={"free.png"} />
                 <HomeCards src={"kfc1.png"} />
-                <HomeCards src={"kfc1.png"} />
-                <HomeCards src={"kfc1.png"} />
-                <HomeCards src={"kfc1.png"} />
+                <HomeCards src={"lavash.png"} />
+                <HomeCards src={"tovuq.png"} />
               </div>
             </div>
           </div>
@@ -131,19 +110,12 @@ function ReactTabs() {
       <TabPanel>
         <Tab>
           <div className='container mx-auto'>
-          {/* <div className='flex  items-center justify-between'>
-            <h1 className='text-[40px] text-[#191919] font-semibold'>Комбо</h1>
-            <div className='flex items-center gap-1 border-[1px] border-[#F0F0F0] w-[115px] h-[35px] justify-center rounded-[6px] hover:bg-[#F9F9F9] duration-300'>
-              <img src="/Filter.png" alt="" />
-              <p className='text-[16px] text-[#000000]'>Фильтры</p>
-            </div>
-          </div> */}
           <div>
               <div className='flex items-center justify-between'>
                 <HomeCards src={"/aksiya1.png"} />
-                <HomeCards src={"/aksiya1.png"} />
-                <HomeCards src={"/aksiya1.png"} />
-                <HomeCards src={"/aksiya1.png"} />
+                <HomeCards src={"/aksiya3.png"} />
+                <HomeCards src={"/aksiya2.png"} />
+                <HomeCards src={"/aksiya.png"} />
               </div>
           </div>
         </div>
@@ -154,9 +126,9 @@ function ReactTabs() {
           <div className='container mx-auto'>
           <div>
               <div className='flex items-center justify-between'>
-                <HomeCards src={"/morojniy.png"} />
-                <HomeCards src={"/morojniy.png"} />
-                <HomeCards src={"/morojniy.png"} />
+                <HomeCards src={"/shkolad.png"} />
+                <HomeCards src={"/somsa.png"} />
+                <HomeCards src={"/oq.png"} />
                 <HomeCards src={"/morojniy.png"} />
               </div>
           </div>
@@ -168,10 +140,10 @@ function ReactTabs() {
           <div className='container mx-auto'>
           <div>
               <div className='flex items-center justify-between'>
+                <HomeCards src={"/chocolate.png"} />
                 <HomeCards src={"/sous.png"} />
-                <HomeCards src={"/sous.png"} />
-                <HomeCards src={"/sous.png"} />
-                <HomeCards src={"/sous.png"} />
+                <HomeCards src={"/moloko.png"} />
+                <HomeCards src={"/murabbo.png"} />
               </div>
           </div>
         </div>
