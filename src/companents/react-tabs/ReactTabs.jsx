@@ -45,7 +45,6 @@ function ReactTabs() {
                 <HomeCards src={"/aksiya1.png"} />
               </div>
             </div>
-            
           </div>
         </Tab>
       </TabPanel>
