@@ -47,7 +47,7 @@ function HomeComponent() {
       <div className='flex items-center justify-between py-7 overflow-scroll gap-3 xl:overflow-hidden'>
         {
           categories.map((el) => (
-            <div onClick={() => setSelectCategoryId(el.id)} className='cursor-pointer w-[125px] h-[90px] border-[1px]  border-[#F0F0F0] rounded-[12px] flex flex-col items-center justify-center gap-2 hover:bg-[#F9F9F9] duration-300'>
+            <div onClick={() => setSelectCategoryId(el.id)} className='cursor-pointer w-[150px] h-[90px] border-[1px]  border-[#F0F0F0] rounded-[12px] flex flex-col items-center justify-center gap-2 hover:bg-[#F9F9F9] duration-300'>
               <img className='w-[32px] h-[38px]' src={el.icon} alt="rasm" />
               <p className='text-[19px] text-[#191919] hover:text-[#FF7010] duration-200'>{el.title}</p>
             </div>
@@ -55,10 +55,11 @@ function HomeComponent() {
         }
       </div>
 
-      <div className='grid grid-cols-4 gap-[30px]'>
+      <div className='grid grid-cols-2 sm: xl:grid xl:grid-cols-4 gap-[30px]'>
+      
         {
           products.filter((p) => p.categoryId === (selectCategoryId)).map((prod) => (
-            <div className="max-w-[300px] w-full h-[343px]  rounded-[12px] border-[1px]  border-[#F0F0F0]">
+            <div className="max-w-[450px] w-full h-[343px]  rounded-[12px] border-[1px]  border-[#F0F0F0]">
               <div className="relative flex flex-col items-center justify-center  overflow-hidden">
                 <div className=''>
                   <img className='w-[300px] h-[280px]' src={prod.image} alt="" />
@@ -80,10 +81,10 @@ function HomeComponent() {
               products.find((pro) => pro.categoryId === el.id)? el.title : ""
             }
           </h1>
-          <div className='grid grid-cols-4 gap-[30px]'>
+          <div className='grid grid-cols-2 md:grid-cols-3 xl:grid xl:grid-cols-4 gap-[30px]'>
             {
               products.filter((el1) => el1.categoryId === el.id).map((el) => (
-                <div className="max-w-[300px] w-full h-auto rounded-[12px] overflow-hidden border border-[#F0F0F0] bg-white shadow-sm">
+                <div className="max-w-[450px] w-full h-auto rounded-[12px] overflow-hidden border border-[#F0F0F0] bg-white shadow-sm">
                   <div className="relative w-full h-[300px]  bg-contain bg-center bg-no-repeat rounded-t-[12px] transition-transform duration-300 ease-in-out hover:scale-110">
                     <img className='w-full h-[270px]' src={el.image} alt="" />
                   </div>
