@@ -7,7 +7,7 @@ function HeaderPage() {
     return (
         <header>
             <div className="container mx-auto">
-                <div className='py-3 flex items-center justify-between border-b-[1px] w-full border-[#F0F0F0]'>
+                <div className='py-3 flex items-center justify-between border-b-[1px] border-[#F0F0F0]'>
                     <div className='flex items-center gap-10'>
                         <div className='flex items-center gap-1'>
                             <img src="/Location.png" alt="location" />
@@ -17,14 +17,14 @@ function HeaderPage() {
                                 <option value="">English</option>
                             </select>
                         </div>
-                        <p className='text-[16px] text-[#191919]'>{t.checkAddress}</p>
+                        <p className=' text-[16px] text-[#191919]'>{t.checkAddress}</p>
                         <div className='flex items-center gap-1'>
                             <p className='text-[16px] text-[#191919]'>{t.avgDelivery}</p>
                             <p className='text-[16px] text-[#191919] font-bold'>00:24:19</p>
                         </div>
                     </div>
                     <div className='flex items-center gap-10'>
-                        <p className='text-[16px] text-[#191919]'>{t.workingHours}</p>
+                        <p className='lg:hidden xl:text-[16px] text-[#191919]'>{t.workingHours}</p>
                         <div className='flex items-center gap-1'>
                             <img src="/Account.png" alt="" />
                             <p className='text-[16px] text-[#191919]'>{t.login}</p>
