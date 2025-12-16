@@ -1,55 +1,74 @@
-import React, { useContext } from 'react'
-import { LanguageContext } from '../../context/ChangeLanguageContext'
+import React, { useContext } from "react";
+import { LanguageContext } from "../../context/ChangeLanguageContext";
 
 function FooterPage() {
-  const { lang, setLang, t } = useContext(LanguageContext)
+  const { lang, setLang, t } = useContext(LanguageContext);
+
   return (
-    <div className='container mx-auto pb-5 mt-15'>
-      <div className='flex justify-between border-t-[1px] border-[#F0F0F0] w-full pt-8'>
-        <div>
-          <div className='flex items-center gap-2'>
-            <img src="/pizza-logo.png" alt="" />
-            <p className='text-[22px] text-[#191919]'>{t.appname}</p>
-          </div>
-          <p className='text-[18px] text-[#191919] pt-40'>© Copyright 2021 — Куда Пицца</p>
-        </div>
-        <div>
-          <p className='text-[22px] text-[#191919] font-semibold'>{t.appname}</p>
-          <p className='text-[18px] text-[#191919] pt-5'>{t.company}</p>
-          <p className='text-[18px] text-[#191919] pt-5'>{t.terms}</p>
-          <p className='text-[18px] text-[#191919] pt-5'>{t.warranty}</p>
-        </div>
-        <div>
-          <p className='text-[22px] text-[#191919] font-semibold'>{t.help}</p>
-          <p className='text-[18px] text-[#191919] pt-5'>{t.restaurant} </p>
-          <p className='text-[18px] text-[#191919] pt-5'>{t.contacts}</p>
-          <p className='text-[18px] text-[#191919] pt-5'>{t.support}</p>
-          <p className='text-[18px] text-[#191919] pt-5'>{t.trackOrder}</p>
-        </div>
-        <div>
-          <p className='text-[22px] text-[#191919] font-semibold'>{t.contacts}</p>
-          <div className='flex items-center gap-2'>
-            <img className='pt-5' src="/tel.png" alt="tel" />
-            <p className='text-[18px] text-[#191919] pt-5'>+7 (926) 223-10-11</p>
-          </div>
-          <div className='flex items-center gap-2'>
-            <img className='pt-5' src="/location1.png" alt="tel" />
-            <p className='text-[18px] text-[#191919] pt-5'>{t.address}</p>
-          </div>
-          <div className='flex items-center gap-5'>
-            <div className='flex items-center gap-2'>
-              <img className='pt-5' src="/facebook.png" alt="tel" />
-              <p className='text-[18px] text-[#191919] pt-5'>Facebok</p>
+    <footer className="bg-white border-t border-[#E5E5E5] py-10">
+      <div className="container mx-auto px-5 lg:px-0">
+        <div className="flex flex-col items-center  sm:grid grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {/* LOGO + COPYRIGHT */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <img src="/pizza-logo.png" alt="logo" className="w-10 h-10" />
+              <p className="text-2xl font-semibold text-[#191919]">{t.appname}</p>
             </div>
-            <div className='flex items-center gap-2'>
-              <img className='pt-5' src="/instagram.png" alt="tel" />
-              <p className='text-[18px] text-[#191919] pt-5'>Instagram</p>
+            <p className="text-sm text-[#5A5A5A]">
+              © 2021 — {t.appname}
+            </p>
+          </div>
+
+          {/* COMPANY */}
+          <div className="space-y-3 hidden sm:block">
+            <p className="text-xl font-semibold text-[#191919]">{t.company}</p>
+            <p className="text-base text-[#5A5A5A] hover:text-[#FF6500] cursor-pointer">{t.terms}</p>
+            <p className="text-base text-[#5A5A5A] hover:text-[#FF6500] cursor-pointer">{t.warranty}</p>
+          </div>
+
+          {/* HELP */}
+          <div className="space-y-3 hidden sm:block">
+            <p className="text-xl font-semibold text-[#191919]">{t.help}</p>
+            <p className="text-base text-[#5A5A5A] hover:text-[#FF6500] cursor-pointer">{t.restaurant}</p>
+            <p className="text-base text-[#5A5A5A] hover:text-[#FF6500] cursor-pointer">{t.contacts}</p>
+            <p className="text-base text-[#5A5A5A] hover:text-[#FF6500] cursor-pointer">{t.support}</p>
+            <p className="text-base text-[#5A5A5A] hover:text-[#FF6500] cursor-pointer">{t.trackOrder}</p>
+          </div>
+
+          {/* CONTACTS & SOCIAL */}
+          <div className="space-y-5">
+            <p className="text-xl font-semibold text-[#191919]">{t.contacts}</p>
+
+            {/* PHONE */}
+            <div className="flex items-center gap-3">
+              <img src="/tel.png" alt="tel" className="w-5 h-5" />
+              <p className="text-base text-[#5A5A5A]">+7 (926) 223-10-11</p>
+            </div>
+
+            {/* LOCATION */}
+            <div className="flex items-center gap-3">
+              <img src="/location1.png" alt="location" className="w-5 h-5" />
+              <p className="text-base text-[#5A5A5A]">{t.address}</p>
+            </div>
+
+            {/* SOCIAL */}
+            <div className="flex items-center gap-5 pt-2">
+              <div className="flex items-center gap-2 hover:text-[#FF6500] cursor-pointer">
+                <img src="/facebook.png" alt="facebook" className="w-5 h-5" />
+                <p className="text-base text-[#5A5A5A]">Facebook</p>
+              </div>
+              <div className="flex items-center gap-2 hover:text-[#FF6500] cursor-pointer">
+                <img src="/instagram.png" alt="instagram" className="w-5 h-5" />
+                <p className="text-base text-[#5A5A5A]">Instagram</p>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default FooterPage
+export default FooterPage;
