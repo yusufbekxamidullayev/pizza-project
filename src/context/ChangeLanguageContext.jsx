@@ -80,7 +80,7 @@ const ChangeLanguageContext = ({ children }) => {
             phone: "+7 (926) 223-10-11",
             address: "Moscow, Yunikh Lenintsev St, 99",
             facebook: "Facebook",
-            instagram: "Instagram"
+            instagram: "Instagramm"
         }
     }
 

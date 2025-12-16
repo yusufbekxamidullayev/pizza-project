@@ -11,7 +11,7 @@ function HomeComponent() {
   
   const [selectCategoryId, setSelectCategoryId] = useState(null)
   const { lang, setLang, t } = useContext(LanguageContext)
-  const { cart , addToCart , increase , decrease} = useContext(CartContext)
+  const { cart , addToCart , increase , decrease} = useContext(CartContext);
   
 
   async function getCategories() {
