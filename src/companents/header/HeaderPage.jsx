@@ -13,7 +13,7 @@ function HeaderPage() {
 
     } , [cart])
     return (
-        <header>
+        <header className='fixed bg-white w-full'>
             <div className="container mx-auto">
                 <div className='py-3 flex items-center justify-between border-b-[1px] border-[#F0F0F0]'>
                     <div className='flex items-center gap-10'>
