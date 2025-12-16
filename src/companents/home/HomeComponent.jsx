@@ -72,9 +72,20 @@ function HomeComponent() {
               <div className="flex flex-col items-center">
                 <p className="font-medium text-[18px] whitespace-nowrap">{prod.title}</p>
                 <div className="flex items-center gap-9 mt-4">
-                  <button className="cursor-pointer px-4 py-2 bg-[#FF6500] text-white text-[14px] font-semibold rounded-md hover:bg-[#e05500] transition">
-                    {t.choose}
-                  </button>
+                  {
+                    cart.find((item) => item.id === prod.id) ?
+                      <button className='flex items-center gap-3 cursor-pointer px-4 py-2 bg-[#FFEEE2] text-white text-[12px] font-semibold rounded-md'>
+                        <span onClick={() => decrease(prod)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>-</span>
+                        <span className='text-[16px] text-[#FF7010] xl:text-[18px]'>{cart.find((el) => el.id === prod.id).qty}</span>
+                        <span onClick={() => increase(prod)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>+</span>
+                      </button>
+                      : <button
+                        onClick={() => addToCart(prod)}
+                        className="cursor-pointer px-4 py-2 bg-[#FF6500] text-white text-[12px] font-semibold rounded-md hover:bg-[#e05500] transition sm:text-[14px]"
+                      >
+                        {t.choose}
+                      </button>
+                  }
                   <p className="text-[18px] font-bold text-[#FF6500]">
                     {prod.basePrice} ₽
                   </p>
