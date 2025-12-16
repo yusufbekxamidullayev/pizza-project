@@ -50,7 +50,7 @@ function HomeComponent() {
 
   return (
     <section>
-      <div className='pt-30 grid grid-cols-8 gap-35 sm:gap-40 xl:gap-2 2xl:gap-2 scrollbar [&::-webkit-scrollbar]:w-0 overflow-x-scroll pt-10'>
+      <div className='pt-30 grid grid-cols-8 gap-35 sm:gap-40 xl:gap-2 2xl:gap-2 scrollbar [&::-webkit-scrollbar]:w-0 overflow-x-scroll'>
         {
           categories.map((el) => (
             <div onClick={() => setSelectCategoryId(el.id)} className='w-[130px] sm:w-[150px] h-[84px] sm:h-[104px] flex items-center justify-center border rounded-lg cursor-pointer bg-white border-gray-300'>
@@ -99,7 +99,7 @@ function HomeComponent() {
 
       {categories.map((el) => (
         <div>
-          <h1 className='text-[40px] text-[#191919] py-7'>
+          <h1 className='text-[40px] text-[#191919] pt-2'>
             {
               products.find((pro) => pro.categoryId === el.id) ? el.title : ""
             }

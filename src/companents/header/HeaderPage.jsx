@@ -9,7 +9,8 @@ function HeaderPage() {
     const [sum , setSum] = useState(0)
 
     useEffect(() => {
-        cart?.forEach((el) => setSum((prev) => prev + el.basePrice))
+        setSum(0);
+        cart?.forEach((el) => setSum((prev) => prev + el.basePrice*el.qty))
 
     } , [cart])
     return (
