@@ -2,17 +2,18 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { LanguageContext } from '../../context/ChangeLanguageContext';
 import { CartContext } from '../../context/CartContext';
+import MultipleItems from '../react-slick/ReactSlick';
 
 function HomeComponent() {
 
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   const [selectCategoryId, setSelectCategoryId] = useState(null)
   const { lang, setLang, t } = useContext(LanguageContext)
-  const { cart , addToCart , increase , decrease} = useContext(CartContext);
-  
+  const { cart, addToCart, increase, decrease } = useContext(CartContext);
+
 
   async function getCategories() {
     try {
@@ -46,7 +47,7 @@ function HomeComponent() {
     getProducts()
   }, [])
 
- 
+
 
   return (
     <section>
@@ -63,15 +64,15 @@ function HomeComponent() {
         }
       </div>
 
-      <div className='flex items-start gap-2 sm:gap-5 overflow-x-scroll scrollbar  [&::-webkit-scrollbar]:w-0 w-full py-3'>
-
+      <div className='flex items-start gap-2 sm:gap-5 overflow-x-scroll scrollbar  [&::-webkit-scrollbar]:w-0 w-full my-1'>
         {
-          products.filter((p) => p.categoryId === (selectCategoryId)).map((prod) => (
-            <div className="flex-shrink-0 w-[330px] sm:w-[250px] sm:w-[310px] flex sm:flex-col items-center justify-between gap-3 p-3 bg-white border-gray-200 rounded-lg overflow-hidden border">
-              <img className='w-[100px] sm:w-full h-auto sm:h-[250px]' src={prod.image} alt="" />
-              <div className="flex flex-col items-center">
+          selectCategoryId ? products.filter((p) => p.categoryId === (selectCategoryId)).map((prod) => (
+            <div className="flex-shrink-0 w-[330px] sm:w-[250px] sm:w-[400px] flex sm:items-center justify-between gap-3 p-3 bg-white border-gray-200 rounded-lg overflow-hidden border">
+              <img className='w-[100px] h-[100px] sm:w-[150px] sm:h-[150px]' src={prod.image} alt="" />
+              <div className="flex flex-col">
                 <p className="font-medium text-[18px] whitespace-nowrap">{prod.title}</p>
-                <div className="flex items-center gap-9 mt-4">
+                <p className='text-[15px] text-[#1A1A1A] text-center sm:text-left sm:text-[18px]  line-clamp-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, minima.</p>
+                <div className="flex items-center gap-1 mt-4 sm:gap-3 lg:gap-5 justify-between">
                   {
                     cart.find((item) => item.id === prod.id) ?
                       <button className='flex items-center gap-3 cursor-pointer px-4 py-2 bg-[#FFEEE2] text-white text-[12px] font-semibold rounded-md'>
@@ -93,18 +94,45 @@ function HomeComponent() {
               </div>
             </div>
 
+          )) : products.filter((el) => el.badge === "NEW").map((el1) => (
+            <div className="flex-shrink-0 w-[330px] sm:w-[250px] sm:w-[400px] flex sm:items-center justify-between gap-3 p-3 bg-white border-gray-200 rounded-lg overflow-hidden border">
+              <img className='w-[100px] h-[100px] sm:w-[150px] sm:h-[150px]' src={el1.image} alt="" />
+              <div className="flex flex-col">
+                <p className="font-medium text-[18px] whitespace-nowrap">{el1.title}</p>
+                <p className='text-[15px] text-[#1A1A1A] text-center sm:text-left sm:text-[18px]  line-clamp-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, minima.</p>
+                <div className="flex items-center gap-1 mt-4 sm:gap-3 lg:gap-5 justify-between">
+                  {
+                    cart.find((item) => item.id === el1.id) ?
+                      <button className='flex items-center gap-3 cursor-pointer px-4 py-2 bg-[#FFEEE2] text-white text-[12px] font-semibold rounded-md'>
+                        <span onClick={() => decrease(el1)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>-</span>
+                        <span className='text-[16px] text-[#FF7010] xl:text-[18px]'>{cart.find((el) => el.id === el1.id).qty}</span>
+                        <span onClick={() => increase(el1)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>+</span>
+                      </button>
+                      : <button
+                        onClick={() => addToCart(el1)}
+                        className="cursor-pointer px-4 py-2 bg-[#FF6500] text-white text-[12px] font-semibold rounded-md hover:bg-[#e05500] transition sm:text-[14px]"
+                      >
+                        {t.choose}
+                      </button>
+                  }
+                  <p className="text-[18px] font-bold text-[#FF6500]">
+                    {el1.basePrice} ₽
+                  </p>
+                </div>
+              </div>
+            </div>
           ))
         }
       </div>
 
       {categories.map((el) => (
         <div>
-          <h1 className='text-[40px] text-[#191919] pt-2'>
+          <h1 className='text-[40px] text-[#191919]'>
             {
               products.find((pro) => pro.categoryId === el.id) ? el.title : ""
             }
           </h1>
-          <div className='mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+          <div className='mt-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
             {products
               .filter((el1) => el1.categoryId === el.id)
               .map((el3) => (
@@ -122,23 +150,24 @@ function HomeComponent() {
                     <p className="text-[18px] font-semibold text-[#1A1A1A] text-center sm:text-left">
                       {el3.title}
                     </p>
+                    <p className='text-[15px] text-[#1A1A1A] text-center sm:text-left sm:text-[18px]  line-clamp-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, minima.</p>
 
-                    <div className="flex items-center gap-1 mt-4 sm:gap-3 lg:gap-5">
+                    <div className="flex items-center gap-1 mt-4 sm:gap-3 lg:gap-5 justify-between">
                       {
-                        cart.find((item) => item.id === el3.id) ? 
+                        cart.find((item) => item.id === el3.id) ?
                           <button className='flex items-center gap-3 cursor-pointer px-4 py-2 bg-[#FFEEE2] text-white text-[12px] font-semibold rounded-md'>
-                          <span onClick={() => decrease(el3)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>-</span>
-                          <span className='text-[16px] text-[#FF7010] xl:text-[18px]'>{cart.find((el) => el.id === el3.id).qty}</span>
-                          <span onClick={() => increase(el3)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>+</span>
-                        </button>
- : <button
-                          onClick={() => addToCart(el3)}
-                          className="cursor-pointer px-4 py-2 bg-[#FF6500] text-white text-[12px] font-semibold rounded-md hover:bg-[#e05500] transition sm:text-[14px]"
-                        >
-                          {t.choose}
-                        </button>
+                            <span onClick={() => decrease(el3)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>-</span>
+                            <span className='text-[16px] text-[#FF7010] xl:text-[18px]'>{cart.find((el) => el.id === el3.id).qty}</span>
+                            <span onClick={() => increase(el3)} className='text-[16px] text-[#FF7010] xl:text-[18px]'>+</span>
+                          </button>
+                          : <button
+                            onClick={() => addToCart(el3)}
+                            className="cursor-pointer px-4 py-2 bg-[#FF6500] text-white text-[12px] font-semibold rounded-md hover:bg-[#e05500] transition sm:text-[14px]"
+                          >
+                            {t.choose}
+                          </button>
                       }
-                      
+
                       <p className="text-[13px] font-bold text-[#FF6500] sm:text-[18px]">
                         {el3.basePrice} ₽
                       </p>

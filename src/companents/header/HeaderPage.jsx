@@ -46,11 +46,11 @@ function HeaderPage() {
                         <p className='text-[18px] text-[#191919]'>{t.appName}</p>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <button className='bg-[orangered] flex items-center justify-center gap-2 rounded-[5px] px-2 h-[35px] '>
+                        <button className='cursor-pointer bg-[orangered] flex items-center justify-center gap-2 rounded-[5px] px-2 h-[35px] '>
                             <p className='text-[24px] text-[white]'><FaCartShopping /></p>
                             <p className='text-[18px] text-[#FFFFFF]'>{Math.ceil(sum)} ₽</p>
                         </button>
-                        <select onChange={(e) => setLang(e.target.value)} className='text-[16px] bg-[orangered]  text-[white] rounded-[5px] w-[60px] h-[35px]' name="" id="">
+                        <select onChange={(e) => setLang(e.target.value)} className='cursor-pointer text-[16px] bg-[orangered]  text-[white] rounded-[5px] w-[60px] h-[35px]' name="" id="">
                             <option value="RU">RU</option>
                             <option value="UZ">UZ</option>
                             <option value="EN">EN</option>
