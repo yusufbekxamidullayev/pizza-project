@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { FaCartShopping } from "react-icons/fa6";
 import { LanguageContext } from '../../context/ChangeLanguageContext';
 import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 function HeaderPage() {
     const { lang, setLang, t } = useContext(LanguageContext)
@@ -14,7 +15,7 @@ function HeaderPage() {
 
     } , [cart])
     return (
-        <header className='fixed bg-white w-full'>
+        <header className='fixed z-10 bg-white w-full'>
             <div className="container mx-auto">
                 <div className='py-3 flex items-center justify-between border-b-[1px] border-[#F0F0F0]'>
                     <div className='flex items-center gap-10'>
@@ -41,10 +42,10 @@ function HeaderPage() {
                     </div>
                 </div>
                 <div className='flex items-center justify-between py-3 border-b-[1px] w-full border-[#F0F0F0]'>
-                    <div className='flex items-center gap-1'>
+                    <Link to={"/"} className='flex items-center gap-1'>
                         <img src="/pizza-logo.png" alt="" />
                         <p className='text-[18px] text-[#191919]'>{t.appName}</p>
-                    </div>
+                    </Link>
                     <div className='flex items-center gap-2'>
                         <button className='cursor-pointer bg-[orangered] flex items-center justify-center gap-2 rounded-[5px] px-2 h-[35px] '>
                             <p className='text-[24px] text-[white]'><FaCartShopping /></p>
