@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext';
+import { FaShoppingCart } from 'react-icons/fa';
 
 function CartPage() {
     const { cart, addToCart, increase, decrease } = useContext(CartContext);
@@ -117,7 +118,12 @@ function CartPage() {
                         </button>
                     </div>
                 </div>
-            </div>) : (<div>Savat bosh</div>)}
+            </div>) : (<div>
+                <div className='flex items-center gap-2 justify-center pb-8'>
+                        <h1 className='text-[42px] text-[orange] '><FaShoppingCart /></h1>
+                        <h1 className='text-[42px] text-[orange] '>Savat bo'sh</h1>
+                </div>
+            </div>)}
         </section>
     )
 }
