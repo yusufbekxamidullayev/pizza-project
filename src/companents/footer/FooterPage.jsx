@@ -53,7 +53,7 @@ function FooterPage() {
             </div>
 
             {/* SOCIAL */}
-            <div className="flex items-center gap-5 pt-2">
+            <div className="flex items-center gap-5 pt-2 pb-4">
               <div className="flex items-center gap-2 hover:text-[#FF6500] cursor-pointer">
                 <img src="/facebook.png" alt="facebook" className="w-5 h-5" />
                 <p className="text-base text-[#5A5A5A]">Facebook</p>

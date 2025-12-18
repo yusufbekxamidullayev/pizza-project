@@ -4,6 +4,11 @@ import { LanguageContext } from '../../context/ChangeLanguageContext';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import CartPage from '../../page/cart/CartPage';
+import { AiOutlineHome } from 'react-icons/ai';
+import { BiCategory } from 'react-icons/bi';
+import { IoSearchOutline } from 'react-icons/io5';
+import { FiShoppingCart } from 'react-icons/fi';
+import { RxPerson } from 'react-icons/rx';
 
 function HeaderPage() {
     const { lang, setLang, t } = useContext(LanguageContext)
@@ -57,6 +62,31 @@ function HeaderPage() {
                             <option value="UZ">UZ</option>
                             <option value="EN">EN</option>
                         </select>
+                    </div>
+                </div>
+                <div className='fixed z-10 bg-white w-full bottom-0 left-0 border-t-[1px] px-3 py-[5px] border-[silver] sm:hidden'>
+                    <div className='flex items-center justify-between'>
+                        <Link to={"/"} className='flex flex-col items-center'>
+                            <AiOutlineHome className='text-[gray] text-[22px]' />
+                            <span className='text-[gray] text-[12px]'>Bosh sahifa</span>
+                        </Link>
+                        <Link to={""} className='flex flex-col items-center'>
+                            <BiCategory className='text-[gray] text-[22px]' />
+
+                            <span className='text-[gray] text-[12px]'>Kategoriyalar</span>
+                        </Link>
+                        <Link to={""} className='flex flex-col items-center'>
+                            <IoSearchOutline className='text-[gray] text-[22px]' />
+                            <span className='text-[gray] text-[12px]'>Qidiruv</span>
+                        </Link>
+                        <Link to={"/cart"} className='flex flex-col items-center'>
+                            <FiShoppingCart className='text-[gray] text-[22px]' />
+                            <span className='text-[gray] text-[12px]'>Savat</span>
+                        </Link>
+                        <Link to={""} className='flex flex-col items-center'>
+                            <RxPerson className='text-[gray] text-[22px]' />
+                            <span className='text-[gray] text-[12px]'>Profil</span>
+                        </Link>
                     </div>
                 </div>
             </div>

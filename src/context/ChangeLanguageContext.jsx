@@ -30,7 +30,9 @@ const ChangeLanguageContext = ({ children }) => {
             phone: "+7 (926) 223-10-11",
             address: "Москва, ул. Юных Ленинцев, д.99",
             facebook: "Facebook",
-            instagram: "Instagram"
+            instagram: "Instagram",
+            basket: "Корзина пуста",
+            basketbtn: "Главная страница"
         },
         UZ: {
             checkAddress: "Manzilni tekshirish",
@@ -55,7 +57,9 @@ const ChangeLanguageContext = ({ children }) => {
             phone: "+7 (926) 223-10-11",
             address: "Moskva, ul. Yunix Lenintsev, d.99",
             facebook: "Facebook",
-            instagram: "Instagram"
+            instagram: "Instagram",
+            basket: "Savat bo'sh",
+            basketbtn: "Bosh sahifa"
         },
         EN: {
             checkAddress: "Check address",
@@ -80,7 +84,9 @@ const ChangeLanguageContext = ({ children }) => {
             phone: "+7 (926) 223-10-11",
             address: "Moscow, Yunikh Lenintsev St, 99",
             facebook: "Facebook",
-            instagram: "Instagramm"
+            instagram: "Instagramm",
+            basket: "Basket empty",
+            basketbtn: "Home"
         }
     }
 

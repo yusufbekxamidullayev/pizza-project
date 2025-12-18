@@ -18,4 +18,4 @@ const MyImage = ({ alt , height , width , src}) => (
     </div>
 );
 
-export default MyImage;
+export default MyImage; 
