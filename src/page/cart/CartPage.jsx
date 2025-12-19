@@ -26,12 +26,12 @@ function CartPage() {
                                     alt={item.title}
                                     className="w-[90px] h-[90px] sm:w-[90px] sm:h-[90px] object-cover rounded-full"
                                 />
-                                <div className='flex flex-col gap-2 sm:flex-row gap-30 md:gap-60 lg:gap-80'>
+                                <div className='flex flex-col gap-[0px] sm:flex-row sm:gap-[120px] md:gap-60 lg:gap-80'>
                                         <div className='flex flex-col'>
                                         <h3 className="text-xl font-semibold text-[#191919]">
                                             {item.title}
                                         </h3>
-                                        <p className="text-sm text-gray-500 mt-1">
+                                        <p className="text-sm text-gray-500">
                                             {item.weight} g
                                         </p>
                                         </div>
