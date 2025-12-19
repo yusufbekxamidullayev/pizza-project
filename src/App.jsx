@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 const LayoutPage = lazy(() => import('./companents/layout/LayoutPage'));
 const HomePage = lazy(() => import('./page/home/HomePage'));
 const AboutPage = lazy(() => import('./page/about/AboutPage'));
@@ -12,17 +13,21 @@ const SearchPage = lazy(() => import('./page/search/SearchPage'));
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div className='flex items-center justify-center h-screen'><RotatingLines
-        visible={true}
-        height="96"
-        width="96"
-        color="orangered"
-        strokeWidth="5"
-        animationDuration="0.75"
-        ariaLabel="rotating-lines-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-      /></div>}>
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center h-screen">
+            <RotatingLines
+              visible={true}
+              height="96"
+              width="96"
+              color="orangered"
+              strokeWidth="5"
+              animationDuration="0.75"
+              ariaLabel="rotating-lines-loading"
+            />
+          </div>
+        }
+      >
         <Routes>
           <Route path="/" element={<LayoutPage />}>
             <Route index element={<HomePage />} />
@@ -35,7 +40,7 @@ function App() {
         </Routes>
       </Suspense>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
