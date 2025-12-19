@@ -33,13 +33,19 @@ const CartProvider = ({children}) => {
 
     function decrease(el) {
         setCart((prev) => {
-            return prev.filter((item) => item.qty > 1).map((it) => {
-                if (el.id === it.id) {
-                    return { ...it, qty: it.qty - 1 }
-                } else {
-                    return it
-                }
-            })
+            let itemFind = prev.find((pro) => pro.id === el.id);
+
+            if(itemFind.qty > 1){
+                return prev.map((item) => {
+                    if(item.id === el.id){
+                        return {...item , qty: item.qty - 1}
+                    }else{
+                        return item;
+                    }        
+                })
+            }else{
+                return prev.filter((pre) => pre.id !== el.id)
+            }
         })
     }
 

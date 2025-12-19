@@ -1,24 +1,39 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import LayoutPage from './companents/layout/LayoutPage'
-import HomePage from './page/home/HomePage'
-import AboutPage from './page/about/AboutPage'
-import SinglePage from './page/single-product/SinglePage'
-import AllProducts from './page/all-products/AllProducts'
-import CartPage from './page/cart/CartPage'
-import SearchPage from './page/search/SearchPage'
+import { lazy, Suspense } from 'react';
+import { RotatingLines } from 'react-loader-spinner';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+const LayoutPage = lazy(() => import('./companents/layout/LayoutPage'));
+const HomePage = lazy(() => import('./page/home/HomePage'));
+const AboutPage = lazy(() => import('./page/about/AboutPage'));
+const SinglePage = lazy(() => import('./page/single-product/SinglePage'));
+const AllProducts = lazy(() => import('./page/all-products/AllProducts'));
+const CartPage = lazy(() => import('./page/cart/CartPage'));
+const SearchPage = lazy(() => import('./page/search/SearchPage'));
+
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LayoutPage />}>
-          <Route index element={<HomePage />} />
-          <Route path='/:id' element={<AllProducts />} />
-          <Route path='products/:id' element={<SinglePage />} />
-          <Route path='cart' element={<CartPage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path='/search' element={<SearchPage />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<div className='flex items-center justify-center h-screen'><RotatingLines
+        visible={true}
+        height="96"
+        width="96"
+        color="orangered"
+        strokeWidth="5"
+        animationDuration="0.75"
+        ariaLabel="rotating-lines-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      /></div>}>
+        <Routes>
+          <Route path="/" element={<LayoutPage />}>
+            <Route index element={<HomePage />} />
+            <Route path='/:id' element={<AllProducts />} />
+            <Route path='products/:id' element={<SinglePage />} />
+            <Route path='cart' element={<CartPage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path='/search' element={<SearchPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }
