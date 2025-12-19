@@ -32,7 +32,11 @@ const ChangeLanguageContext = ({ children }) => {
             facebook: "Facebook",
             instagram: "Instagram",
             basket: "Корзина пуста",
-            basketbtn: "Главная страница"
+            basketbtn: "Главная",
+            category: "Продукты",
+            search: "Поиск",
+            bask: "Корзина",
+            profil: "Профил"
         },
         UZ: {
             checkAddress: "Manzilni tekshirish",
@@ -59,7 +63,11 @@ const ChangeLanguageContext = ({ children }) => {
             facebook: "Facebook",
             instagram: "Instagram",
             basket: "Savat bo'sh",
-            basketbtn: "Bosh sahifa"
+            basketbtn: "Bosh sahifa",
+            category: "Mahsulotlar",
+            search: "Qidiruv",
+            bask: "Savat",
+            profil: "Profil"
         },
         EN: {
             checkAddress: "Check address",
@@ -86,7 +94,11 @@ const ChangeLanguageContext = ({ children }) => {
             facebook: "Facebook",
             instagram: "Instagramm",
             basket: "Basket empty",
-            basketbtn: "Home"
+            basketbtn: "Home",
+            category: "Products",
+            search: "Search",
+            bask: "Basket",
+            profil: "Profile"
         }
     }
 

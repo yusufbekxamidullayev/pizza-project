@@ -5,6 +5,7 @@ import { CartContext } from '../../context/CartContext';
 import MyImage from '../lazy-load/LazyLoad';
 import { Link } from 'react-router-dom';
 import { FaAngleRight } from "react-icons/fa6";
+import { CiSearch } from "react-icons/ci";
 import CartPage from '../../page/cart/CartPage';
 function HomeComponent() {
 
@@ -129,10 +130,12 @@ function HomeComponent() {
           ))
         }
       </div>
-      <div class="flex items-center justify-between bg-[white] rounded-lg gap-5 p-3">
-        <h1 class="font-medium hidden sm:flex text-[16px] md:text-[18px] whitespace-nowrap">Проверить адрес доставки</h1>
-        <input class="border border-gray-200 px-2 py-2   rounded w-full outline-none" placeholder="Адрес" type="text"></input>
-        <button class="rounded-lg text-[white] cursor-pointer bg-[#FF7010] px-3 py-2">Проверить</button>
+      <div class="flex items-center justify-between bg-[white] rounded-lg gap-3 p-3">
+        <input class="border border-gray-200 px-2 py-2   rounded w-full outline-none" placeholder={t.search} type="text">
+          
+
+        </input>
+        <button class="rounded-lg text-[white] cursor-pointer bg-[#FF7010] px-3 py-3 text-[16px] sm:"><CiSearch /></button>
       </div>
 
       {categories.map((el) => (

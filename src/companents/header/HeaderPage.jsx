@@ -3,7 +3,6 @@ import { FaCartShopping } from "react-icons/fa6";
 import { LanguageContext } from '../../context/ChangeLanguageContext';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
-import CartPage from '../../page/cart/CartPage';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiCategory } from 'react-icons/bi';
 import { IoSearchOutline } from 'react-icons/io5';
@@ -68,24 +67,23 @@ function HeaderPage() {
                     <div className='flex items-center justify-between'>
                         <Link to={"/"} className='flex flex-col items-center'>
                             <AiOutlineHome className='text-[gray] text-[22px]' />
-                            <span className='text-[gray] text-[12px]'>Bosh sahifa</span>
+                            <span className='text-[gray] text-[12px]'>{t.basketbtn}</span>
                         </Link>
-                        <Link to={""} className='flex flex-col items-center'>
+                        <Link to={"/category"} className='flex flex-col items-center'>
                             <BiCategory className='text-[gray] text-[22px]' />
-
-                            <span className='text-[gray] text-[12px]'>Kategoriyalar</span>
+                            <span className='text-[gray] text-[12px]'>{t.category}</span>
                         </Link>
-                        <Link to={""} className='flex flex-col items-center'>
+                        <Link to={"/search"}  className='flex flex-col items-center'>
                             <IoSearchOutline className='text-[gray] text-[22px]' />
-                            <span className='text-[gray] text-[12px]'>Qidiruv</span>
+                            <span className='text-[gray] text-[12px]'>{t.search}</span>
                         </Link>
                         <Link to={"/cart"} className='flex flex-col items-center'>
                             <FiShoppingCart className='text-[gray] text-[22px]' />
-                            <span className='text-[gray] text-[12px]'>Savat</span>
+                            <span className='text-[gray] text-[12px]'>{t.bask}</span>
                         </Link>
                         <Link to={""} className='flex flex-col items-center'>
                             <RxPerson className='text-[gray] text-[22px]' />
-                            <span className='text-[gray] text-[12px]'>Profil</span>
+                            <span className='text-[gray] text-[12px]'>{t.profil}</span>
                         </Link>
                     </div>
                 </div>

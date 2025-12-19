@@ -13,10 +13,11 @@ function CartPage() {
     return (
         <section className='bg-[#F9F9F9] pt-40'>
             {cartItem.length > 0 ? (<div className='container mx-auto '>
-                <div>
-                    <h1 className='text-[40px] text-[#191919] font-bold'>Ваш заказ</h1>
-                </div>
+                
                 <div className='flex flex-col items-center gap-3'>
+                    <div>
+                        <h1 className='text-[40px] text-[#191919] font-bold'>Ваш заказ</h1>
+                    </div>
                     {cartItem?.map((item) => (
                         <div className="max-w-[800px] w-full  bg-white border border-gray-200 rounded-lg p-2 shadow-sm">
                             <div className="flex items-center gap-4">
@@ -25,7 +26,7 @@ function CartPage() {
                                     alt={item.title}
                                     className="w-[90px] h-[90px] sm:w-[90px] sm:h-[90px] object-cover rounded-full"
                                 />
-                                <div className='flex flex-col gap-2 sm:flex sm:flex-row justify-between'>
+                                <div className='flex flex-col gap-2 sm:flex-row gap-30 md:gap-60 lg:gap-80'>
                                         <div className='flex flex-col'>
                                         <h3 className="text-xl font-semibold text-[#191919]">
                                             {item.title}
