@@ -81,7 +81,7 @@ function HeaderPage() {
                             <FiShoppingCart className='text-[gray] text-[22px]' />
                             <span className='text-[gray] text-[12px]'>{t.bask}</span>
                         </Link>
-                        <Link to={""} className='flex flex-col items-center'>
+                        <Link to={"/profile"} className='flex flex-col items-center'>
                             <RxPerson className='text-[gray] text-[22px]' />
                             <span className='text-[gray] text-[12px]'>{t.profil}</span>
                         </Link>

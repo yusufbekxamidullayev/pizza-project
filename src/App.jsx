@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Profile from './page/profile/ProfilePage';
 
 const LayoutPage = lazy(() => import('./companents/layout/LayoutPage'));
 const HomePage = lazy(() => import('./page/home/HomePage'));
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LayoutPage />}>
             <Route index element={<HomePage />} />
+            <Route path='/profile' element={<Profile/>}/>
             <Route path='/:id' element={<AllProducts />} />
             <Route path='products/:id' element={<SinglePage />} />
             <Route path='cart' element={<CartPage />} />

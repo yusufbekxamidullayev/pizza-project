@@ -1,59 +1,52 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-export const CartContext = createContext(null);
+export const CartContext = createContext();
 
-const CartProvider = ({children}) => {
-
+export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(() => {
-        const saved = localStorage.getItem("cart");
-        return saved ? JSON.parse(saved) : []
-    })
+        const stored = localStorage.getItem("cart");
+        return stored ? JSON.parse(stored) : [];
+    });
 
+    // Cartni localStoragega yozamiz har safar o'zgarganda
     useEffect(() => {
-        localStorage.setItem("cart" , JSON.stringify(cart))
-    } , [cart])
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
 
-    function addToCart(el) {
-        console.log(el);
+    const addToCart = (product) => {
+        const exists = cart.find((item) => item.id === product.id);
+        if (exists) {
+            setCart(
+                cart.map((item) =>
+                    item.id === product.id ? { ...item, qty: item.qty + 1 } : item
+                )
+            );
+        } else {
+            setCart([...cart, { ...product, qty: 1 }]);
+        }
+    };
 
-        setCart((prev) => [...prev, { ...el, qty: 1 }])
-    }
+    const increase = (product) => addToCart(product);
 
-    function increase(el) {
-        setCart((prev) => {
-            return prev.map((item) => {
-                if (item.id === el.id) {
-                    return { ...item, qty: item.qty + 1 }
-                } else {
-                    return item
-                }
-            })
-        })
-    }
+    const decrease = (product) => {
+        const exists = cart.find((item) => item.id === product.id);
+        if (!exists) return;
+        if (exists.qty === 1) {
+            setCart(cart.filter((item) => item.id !== product.id));
+        } else {
+            setCart(
+                cart.map((item) =>
+                    item.id === product.id ? { ...item, qty: item.qty - 1 } : item
+                )
+            );
+        }
+    };
 
-    function decrease(el) {
-        setCart((prev) => {
-            let itemFind = prev.find((pro) => pro.id === el.id);
-
-            if(itemFind.qty > 1){
-                return prev.map((item) => {
-                    if(item.id === el.id){
-                        return {...item , qty: item.qty - 1}
-                    }else{
-                        return item;
-                    }        
-                })
-            }else{
-                return prev.filter((pre) => pre.id !== el.id)
-            }
-        })
-    }
-
-    return(
-        <CartContext.Provider value={{cart , setCart , addToCart ,increase , decrease}}>
+    return (
+        <CartContext.Provider value={{ cart, addToCart, increase, decrease }}>
             {children}
         </CartContext.Provider>
-    )
-}
+    );
+};
 
-export default CartProvider
+export default CartProvider;

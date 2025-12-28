@@ -36,7 +36,9 @@ const ChangeLanguageContext = ({ children }) => {
             category: "Продукты",
             search: "Поиск",
             bask: "Корзина",
-            profil: "Профил"
+            profil: "Профил",
+            login1: "Выйти из аккаунт",
+            product: "Ваши продукты"
         },
         UZ: {
             checkAddress: "Manzilni tekshirish",
@@ -67,7 +69,9 @@ const ChangeLanguageContext = ({ children }) => {
             category: "Mahsulotlar",
             search: "Qidiruv",
             bask: "Savat",
-            profil: "Profil"
+            profil: "Profil",
+            login1: "Akkauntdan chiqish",
+            product: "Mahsulotlaringiz"
         },
         EN: {
             checkAddress: "Check address",
@@ -98,7 +102,9 @@ const ChangeLanguageContext = ({ children }) => {
             category: "Products",
             search: "Search",
             bask: "Basket",
-            profil: "Profile"
+            profil: "Profile",
+            login1: "Log out",
+            product: "Your products"
         }
     }
 
