@@ -15,17 +15,18 @@ function App() {
     <BrowserRouter>
       <Suspense
         fallback={
-          <div className="flex items-center justify-center h-screen">
-            <RotatingLines
-              visible={true}
-              height="96"
-              width="96"
-              color="orangered"
-              strokeWidth="5"
-              animationDuration="0.75"
-              ariaLabel="rotating-lines-loading"
-            />
-          </div>
+          <div className="flex flex-col items-center justify-center h-screen">
+                  <RotatingLines
+                    visible={true}
+                    height="96"
+                    width="96"
+                    color="orangered"
+                    strokeWidth="5"
+                    animationDuration="0.75"
+                    ariaLabel="rotating-lines-loading"
+                  />
+                  <h1 className="text-[orangered] text-[32px]">Fast - Food</h1>
+                </div>
         }
       >
         <Routes>

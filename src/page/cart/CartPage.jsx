@@ -36,8 +36,8 @@ function CartPage() {
                                         </p>
                                         </div>
                                     <div className="flex items-center gap-4">
-                                        <div className="flex items-center bg-[#FFF2E8] rounded-lg px-3 py-1 gap-3 text-[#FF6500]">
-                                            <span onClick={() => decrease(item)} className="text-sm font-bold">−</span>
+                                        <div className="flex items-center bg-[#FFF2E8] rounded-lg px-3 py-1 gap-3 text-[#FF6500] cursor-pointer">
+                                            <span onClick={() => decrease(item)} className="text-sm font-bold cursor-pointer">−</span>
                                             <span className="text-base font-semibold">
                                                 {cart?.find((el) => el?.id === item.id)?.qty}
                                             </span>
